@@ -1,0 +1,31 @@
+---
+- name: system level
+  hosts: localhost
+  become: yes
+  tasks:
+    - apt:
+        pkg: code
+
+- name: user level
+  hosts: localhost
+  roles:
+    - aliases
+    - git-conf
+  tasks:
+    # - community.general.ansible_galaxy_install:
+    #     type: collection
+    #     name: ansible.posix
+    - community.general.ansible_galaxy_install:
+        type: role
+        name: geerlingguy.docker
+    - community.general.ansible_galaxy_install:
+        type: role
+        name: geerlingguy.certbot
+    - community.general.ansible_galaxy_install:
+        type: collection
+        name: community.docker
+    - command:
+        cmd: "code --install-extension {{ item }}"
+      with_items:
+        - mervin.markdown-formatter
+        - redhat.vscode-yaml

@@ -1,0 +1,12 @@
+---
+- name: Add Alias to Run Ansible Playbook
+  lineinfile:
+    path: "~/.bashrc"
+    line: 'alias apb="ansible-playbook"'
+    state: present
+
+- name: Add Alias Show Git Log
+  lineinfile:
+    path: "~/.bashrc"
+    line: 'alias glog="git log --all --oneline --graph"'
+    state: present
