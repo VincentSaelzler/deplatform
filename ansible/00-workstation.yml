@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - apt:
-        pkg: code
+        pkg: code, libreoffice
 
 - name: user level
   hosts: localhost

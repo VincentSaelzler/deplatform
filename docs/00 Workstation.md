@@ -3,6 +3,7 @@
 lastpass extension in firefox
 
 ```sh
+ssh-keygen # set key pw 🚨🚨🚨
 echo "samplepass" > ~/.ansible_vault_password # 🚨🚨🚨
 ```
 
@@ -20,7 +21,7 @@ ansible-galaxy collection install community.general
 ## use ansible
 
 ```sh
-ansible-playbook ~/deplatform/ansible/0-ansible-controller.yml --ask-become-pass
+ansible-playbook ~/deplatform/ansible/0-workstation.yml --ask-become-pass
 source ~/.bashrc
 glog
 ```

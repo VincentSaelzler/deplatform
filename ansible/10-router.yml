@@ -1,0 +1,8 @@
+---
+- name: generate router bootstrap file with embedded (semi) secrets
+  hosts: localhost
+  tasks:
+    - template:
+        src: openwrt/bootstrap.sh
+        # ENSURE THE DESTINATION IS OUTSIDE OF SOURCE CONTROL
+        dest: ~/openwrt-bootstrap.sh
